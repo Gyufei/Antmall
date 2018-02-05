@@ -8,6 +8,9 @@ import { FootComponent } from './foot/foot.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MiniSearchBarComponent } from './mini-search-bar/mini-search-bar.component';
 
+import { rest } from './service/rest.service';
+import { goodService } from './service/good.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,7 @@ import { MiniSearchBarComponent } from './mini-search-bar/mini-search-bar.compon
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [rest,goodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
