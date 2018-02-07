@@ -1,5 +1,10 @@
-import { Good, Cate } from '../classes/good';
+/*
+* 此服务用于模拟后端产生的数据，在真实后端API完成后即不需要此文件，直接在 rest.service 中统一进行请求管理即可。
+*/
+import { Good, Cate, SubCate } from '../classes/good';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class Mock{
   
   //产品的起始id
@@ -32,5 +37,21 @@ export class Mock{
     }
 
     return index_goods_list;
+  }
+
+  //返回各分类的子分类列表
+  public subcate(id:number):SubCate{
+    let sub_cate_list = [];
+
+    for(let i=0;i<8;i++){
+      let rand_num = Math.floor(Math.random()*4+2);
+      let tmp_list = [];
+      for(let j=0;j<rand_num;tmp_list[j++]="临时分类");
+      sub_cate_list.push(tmp_list);
+    }
+
+    let sub_cate = new SubCate(id,sub_cate_list);
+
+    return sub_cate;
   }
 }

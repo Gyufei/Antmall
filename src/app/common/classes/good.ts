@@ -11,6 +11,13 @@ export class Cate{
   constructor(
     public c_id:number,
     public c_name:string,
-    public goods:Good[]
+    public goods:Good[],
     ){}
+}
+
+export class SubCate{
+    constructor(
+        public bl_c_id:number,
+        public sub_cate_list:Array<string[]>
+        ){}
 }

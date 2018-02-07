@@ -1,5 +1,7 @@
 # Taobao
 
+项目为使用 Angular4 + Scss + BootStrap 的一个商城系统。
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
 ## Development server

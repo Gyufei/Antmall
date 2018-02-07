@@ -8,8 +8,10 @@ import { FootComponent } from './foot/foot.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MiniSearchBarComponent } from './mini-search-bar/mini-search-bar.component';
 
-import { rest } from './service/rest.service';
-import { goodService } from './service/good.service';
+import { rest } from './common/service/rest.service';
+import { goodService } from './common/service/good.service';
+import { CateHover } from './common/directive/cate_hover.directive';
+import { Mock } from './common/mock/good_mock';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,13 @@ import { goodService } from './service/good.service';
     HeadComponent,
     FootComponent,
     SearchBarComponent,
-    MiniSearchBarComponent
+    MiniSearchBarComponent,
+    CateHover,
   ],
   imports: [
     BrowserModule
   ],
-  providers: [rest,goodService],
+  providers: [rest,goodService,Mock],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

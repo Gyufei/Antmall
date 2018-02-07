@@ -7,15 +7,25 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 
-import { Cate } from '../classes/good'; 
+import { Cate, SubCate } from '../classes/good'; 
 import { Mock } from '../mock/good_mock';
 
 @Injectable()
 export class rest{
+
+  constructor(private mock:Mock){}
+  
   
   public get_index_goods():Promise<Cate[]>{
-    let mock = new Mock;
-    let res = mock.index_cate()
+    let res = this.mock.index_cate()
     return Promise.resolve(res);
   }
+  
+  
+  public get_side_cate(id:number):Promise<SubCate>{
+    console.log('will_get_cate_id: '+id);
+    let res =  this.mock.subcate(id);
+    return Promise.resolve(res);
+  }
+
 }

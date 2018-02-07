@@ -1,11 +1,15 @@
 @import '../../assets/scss/base';
 
+.sele{
+  background:white;
+  color:#87cefa;
+}
+
 div.categoryMenu {
   position: absolute;
   left: 0px;
   top: 0px;
   z-index: 1;
-  background-color: #e2e2e2;
   width: 200px;
   margin-left: 20px;
   margin-top: 52px;
@@ -19,14 +23,11 @@ div.categoryMenu {
 }
 
 div.eachCategory {
-  line-height: 30px;
+  line-height: 39px;
   padding-left: 10px;
   font-size: 14px;
-  span: {
+  span{
     margin-left: 10px;
-  }
-  &:hover {
-    background-color: white;
   }
 }
 
