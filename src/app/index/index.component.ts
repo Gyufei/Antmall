@@ -25,19 +25,19 @@ export class IndexComponent implements OnInit {
   public get_all_cate(){
     this.gs.get_index_cate().then((res)=>{
       this.all_cate_good = res;
-      this.commend_cate = res.splice(1,3);
+      this.commend_cate = res.slice(1,3);
     })
   }
 
-  public get_side_cate(id:number){
-    this.gs.get_side_cate(id).then((res)=>{
+  public get_sub_cate(id:number){
+    this.gs.get_sub_cate(id).then((res)=>{
       this.sub_cate = res;
     })
   }
 
-  //鼠标移动到菜单分类上时显示详情菜单
+  // 鼠标移动到菜单分类上时显示详情菜单
   public cate_enter(id:number):void{
-    this.get_side_cate(id)
+    this.get_sub_cate(id)
     this.hover_cate_id = id;
   }
   //鼠标离开菜单分类
