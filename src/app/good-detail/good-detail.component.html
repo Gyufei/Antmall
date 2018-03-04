@@ -3,13 +3,9 @@
 <div class="imgAndInfo">
 <div><img src="../assets/image/a1.jpg" width="100%" style="margin-bottom: 20px;" alt=""></div>
 <div class="imgInImgAndInfo">
-        <img class="bigImg" src="../assets/image/产品/big1.jpg" alt="big-pic">
+        <img class="bigImg" src="{{big_img_url}}" alt="big-pic">
         <div class="smallImgDiv">
-            <img src="../assets/image/产品/a11.jpg" class="smallImg" bigurl="../assets/image/产品/big1.jpg">
-            <img src="../assets/image/产品/a12.jpg" class="smallImg" bigurl="../assets/image/产品/big2.jpg">
-            <img src="../assets/image/产品/a13.jpg" class="smallImg" bigurl="../assets/image/产品/big3.jpg">
-            <img src="../assets/image/产品/a14.jpg" class="smallImg" bigurl="../assets/image/产品/big4.jpg">
-            <img src="../assets/image/产品/a15.jpg" class="smallImg" bigurl="../assets/image/产品/big5.jpg">
+            <img *ngFor="let img of img_src_list" src="{{img.img_url}}" (mouseenter)="sm_img_hover(img)" class="smallImg">
         </div>
 </div>
     <div class="infoInImgAndInfo">

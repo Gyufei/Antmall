@@ -11,19 +11,29 @@ export class goodService{
 
   constructor(private rest:rest){}
  
-  //所有分类及分类下的展示商品
-  public all_cate_good:string = BaseUrl.base + "/index/all_cate_good";
-  public sub_cate = BaseUrl.base + "/index/sub_cate";
+  //主页所有分类及分类下的展示商品
+  public all_cate_good_url:string = BaseUrl.base + "/all_cate_good";
+  //侧边栏分类Hover时显示的子分类
+  public sub_cate_url = BaseUrl.base + "/sub_cate";
+  //获取商品详情
+  public good_detail_url = BaseUrl.base + "/good_detail"
  
-  //请求主页的各分类下所有商品
+
+  //获取主页的各分类下所有商品
   public get_index_cate():Promise<Cate[]>{
-    let url = this.all_cate_good
+    let url = this.all_cate_good_url;
     return this.rest.get(url).then((res)=> res.data);
   }
   
-  //请求主页侧边栏分类的所有子分类(由于没有真实数据，制作假数据太麻烦，此处不管传入的分类id参数为什么，都返回同样的子分类)
+  //获取主页侧边栏分类的所有子分类
   public get_sub_cate(id:number):Promise<any>{
-    let url = this.sub_cate + "?c_id=" + id;
+    let url = `${this.sub_cate_url}?c_id=${id}`;
+    return this.rest.get(url).then((res)=>res.data);
+  }
+  
+  //获取商品详情
+  public get_good_detail(id:number):Promise<any>{
+    let url = `${this.good_detail_url}?g_id=${id}`;
     return this.rest.get(url).then((res)=>res.data);
   }
 
