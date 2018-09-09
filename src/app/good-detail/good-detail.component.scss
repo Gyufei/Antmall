@@ -1,4 +1,4 @@
-@import '../../assets/scss/base';
+@import 'src/assets/scss/base';
 
 div.reviewDiv {
   width: 790px;
@@ -238,7 +238,7 @@ span.juhuasuanTime {
 }
 
 div.productPriceDiv {
-  background-image: url(../../assets/image/公共/priceBackground.png);
+  background-image: url(../../assets/image/common/priceBackground.png);
   height: 102px;
   padding: 10px;
   color: #666666;

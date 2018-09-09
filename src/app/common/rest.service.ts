@@ -20,6 +20,13 @@ export class rest{
                .catch(this.handleError);
   }
 
+  public post(url, data:Object):Promise<any>{
+    console.log(url);
+    return this.http.post(url, data).toPromise()
+               .then(response => this.extractData(response))
+               .catch(this.handleError)
+  }
+
   //请求时的错误处理函数
   public handleError(error:any){
     let errMsg = (error.message)?error.message:
