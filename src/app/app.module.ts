@@ -20,6 +20,7 @@ import { HeadComponent } from './common/components/head/head.component';
 import { FootComponent } from './common/components/foot/foot.component';
 import { SearchBarComponent } from './common/components/search-bar/search-bar.component';
 import { MiniSearchBarComponent } from './common/components/mini-search-bar/mini-search-bar.component';
+import { RegisteredComponent } from './registered/registered.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MiniSearchBarComponent } from './common/components/mini-search-bar/mini
     CateHover,
     GoodDetailComponent,
     LoginComponent,
+    RegisteredComponent,
   ],
   imports: [
     BrowserModule,

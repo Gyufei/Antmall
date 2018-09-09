@@ -1,50 +1,53 @@
-div.tmall{
+@import 'src/assets/scss/base';
+
+.tmall{
   margin: 20px;
 }
 
-div.log{
+.log{
   position: absolute;
   border: 1px solid #999;
   right: 100px;
   top: 200px;
   background-color: white;
   padding: 70px 40px;
-}
+  width: 360px;
+  
+  .zhdl{
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-span.zhdl{
-  font-size: 18px;
-  font-weight: bold;
-}
+  .input-group{
+    margin:20px 0px;
 
-div.input-group{
-  margin:20px 0px;
-}
+    input {
+      border: 1px solid #CBCBCB;
+      height: 40px;
+      width: 244px;
+    }
+  }
 
-div.input-group input{
-  border: 1px solid #CBCBCB;
-  height: 40px;
-  width: 244px;
-}
+  .gay a {
+    color: #999;
+    cursor: pointer;
 
-span.gay a{
-  color: #999;
-}
+    &:hover {
+      color: $m_c;
+    }
+  }
 
-span.gay a:hover{
-  color:#c40000;
-}
+  .loginbtn{
+    margin-top: 20px;
+    text-align: center;
+    line-height: 22px;
 
-div.loginbtn{
-  margin-top: 20px;
-  text-align: center;
-  line-height: 20px;
+    button{
+      border: 1px solid #c40000;
+      background-color: #c40000;
+      color: white;
+      width: 285px;
+      height: 34px;
+    }
+  }
 }
-
-button{
-  border: 1px solid #c40000;
-  background-color: #c40000;
-  color: white;
-  width: 285px;
-  height: 30px;
-}
-

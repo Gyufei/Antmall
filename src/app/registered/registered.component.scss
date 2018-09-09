@@ -1,0 +1,47 @@
+@import 'src/assets/scss/base';
+
+div.zhuce{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 50px 20px 20px;
+}
+
+form {
+  width: 450px;
+
+  .form-group {
+    height: 40px;
+  }
+  
+  .big-font {
+    font-size: $b_f_s;
+    font-weight: bold;
+  }
+
+  .text-danger {
+
+    .warn-symbol {
+      font-size: 22px;
+      vertical-align: -6px;
+    }
+    padding-top: 4px;
+  }
+
+  .submit {
+    width: 100%;
+    margin-top: 50px;
+   
+    .submit-btn{
+      width: 170px;
+      height: 36px;
+
+      border-radius:2px;
+      color: white;
+      background-color: #c40000;
+      border-width:0px;
+    }
+  }
+
+}
