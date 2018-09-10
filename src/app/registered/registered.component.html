@@ -1,5 +1,9 @@
 <div class="zhuce">
-  <form class="form-horizontal">
+  <form 
+  class="form-horizontal"
+  #regisFrom="ngForm"
+  (ngSubmit)="onSubmit()"
+  >
     <div class="form-group big-font">
       <label class="col-md-4 control-label">设置会员名</label>
     </div>
@@ -8,12 +12,16 @@
       <label class="col-md-4 control-label">登录名</label>
       <div class="col-md-6">
         <input
+          [(ngModel)]="name"
+          name="name"
+          #inputName="ngModel"
           type="text"
+          required
           class="form-control"
           placeholder="会员名设置成功不可更改">
-        <p class="text-danger" *ngIf="false">
+        <p class="text-danger" [hidden]="inputName.valid || inputName.pristine">
           <span class="warn-symbol">*</span>
-          会员名格式错误
+          会员名不能为空
         </p>
       </div>
     </div>
@@ -29,10 +37,13 @@
       <label class="col-md-4 control-label">登陆密码</label>
       <div class="col-md-6">
         <input
-          type="text"
+          [(ngModel)]="password"
+          name="password"
+          type="password"
+          required
           class="form-control"
           placeholder="设置登录密码">
-        <p class="text-danger" *ngIf="false">
+        <p class="text-danger" [hidden]="!password || password.length > 6">
           <span class="warn-symbol">*</span>
           密码长度必须大于6位</p>
       </div>
@@ -41,18 +52,21 @@
     <div class="form-group">
       <label class="col-md-4 control-label">密码确认</label>
       <div class="col-md-6">
-        <input
-          type="text"
+          <input
+          [(ngModel)]="repeat_password"
+          name="repeat_password"
+          type="password"
+          required
           class="form-control"
           placeholder="请再次输入你的密码">
-        <p class="text-danger" *ngIf="false">
+        <p class="text-danger" *ngIf="repeat_password !== password">
           <span class="warn-symbol">*</span>
           两次输入密码不一致</p>
       </div>
     </div>
 
     <div class="submit" layout layout-align="center center">
-      <button class="btn submit-btn" type="submit">提交</button>
+      <button class="btn submit-btn" type="submit" [disabled]="!regisFrom.form.valid">提交</button>
     </div>
   </form>
 </div>

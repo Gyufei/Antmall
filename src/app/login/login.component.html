@@ -9,24 +9,28 @@
 
     <div class="log">
         <span class="zhdl">账户登录</span>
+
         <div class="input-group">
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-user"></span>
             </span>
             <input class="form-control"  #name type="text">
         </div>
+
         <div class="input-group">
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-lock"></span>
             </span>
             <input class="form-control" type="password" #password>
         </div>
+
         <div>
             <span class="gay"><a>忘记密码</a></span>
             <span class="gay pull-right">
                 <a routerLink="/registered">免费注册</a>
             </span>
         </div>
+
         <div class="loginbtn">
             <button
             (click)="login(name.value, password.value)" 
