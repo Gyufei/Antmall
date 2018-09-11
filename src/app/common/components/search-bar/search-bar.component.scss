@@ -1,6 +1,6 @@
 @import 'src/assets/scss/base.scss';
 
-div.searchDiv {
+.searchDiv {
   background-color: $m_c;
   width: 400px;
   height: 40px;
@@ -13,6 +13,8 @@ div.searchDiv {
     height: 36px;
     border: 1px solid transparent;
     outline: none;
+
+    padding-left: 6px;
   }
   i,
   button {
