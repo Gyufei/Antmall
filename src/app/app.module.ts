@@ -9,6 +9,7 @@ import { rest } from './common/rest.service';
 import { goodService } from './common/service/good.service';
 import { UserService } from './common/service/user.service';
 import { AuthGuard } from './common/service/auth-guard.service'
+import { AuthService } from './common/service/auth.service'
 import { CateHover } from './common/directive/cate_hover.directive';
 
 import { AppComponent } from './app.component';
@@ -45,6 +46,7 @@ import { RegisteredComponent } from './registered/registered.component';
     rest,
     goodService,
     UserService,
+    AuthService,
     AuthGuard
   ],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router' 
 
 import { UserService } from '../common/service/user.service'
+import { AuthService } from '../common/service/auth.service'
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,14 @@ import { UserService } from '../common/service/user.service'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private user: UserService, private router:　Router) {}
+  constructor(
+    private auth: AuthService,
+    private user: UserService, 
+    private router:　Router
+    ) {}
 
   ngOnInit() {
-    if (localStorage.getItem('token')) {
+    if (this.auth.isLogin) {
       this.router.navigate(['/index'])
     }
   }
