@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router' 
+import { Router } from '@angular/router'
 
 import { UserService } from '../common/service/user.service'
 import { AuthService } from '../common/service/auth.service'
@@ -12,7 +12,7 @@ import { AuthService } from '../common/service/auth.service'
 export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthService,
-    private user: UserService, 
+    private user: UserService,
     private router:　Router
     ) {}
 
@@ -22,9 +22,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private login(name: string, password: string):void {
+  private login(name: string, password: string): void {
     if (!name || !password) return
-    this.user.login(name, password).then(() => {
+    this.user.login(name, password).subscribe(() => {
       this.router.navigate(['/index'], { replaceUrl: true})
     })
   }

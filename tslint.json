@@ -86,8 +86,8 @@
     ],
     "radix": true,
     "semicolon": [
-      true,
-      "always"
+      'error',
+      'never'
     ],
     "triple-equals": [
       true,

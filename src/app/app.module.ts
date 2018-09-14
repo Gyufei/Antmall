@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'
 import { AppRouteingModule } from './router/app-routeing.module';
-import { rest } from './common/rest.service';
+import { Rest } from './common/rest.service';
 
-import { goodService } from './common/service/good.service';
+import { GoodService } from './common/service/good.service';
 import { UserService } from './common/service/user.service';
 import { AuthGuard } from './common/service/auth-guard.service'
 import { AuthService } from './common/service/auth.service'
@@ -38,13 +38,13 @@ import { RegisteredComponent } from './registered/registered.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
     AppRouteingModule
   ],
   providers: [
-    rest,
-    goodService,
+    Rest,
+    GoodService,
     UserService,
     AuthService,
     AuthGuard
