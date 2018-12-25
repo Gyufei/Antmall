@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/toPromise';
 
-import { BaseUrl } from '../base_url';
+import { BaseUrl } from '../common/base_url';
 
-import { Cate } from '../models/good';
-import { Rest } from '../rest.service';
+import { Cate } from '../common/models/good';
+import { Rest } from './rest.service';
 
-import { Observable } from 'rxjs/observable'
+import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class GoodService {
 
   constructor(private rest: Rest) {}

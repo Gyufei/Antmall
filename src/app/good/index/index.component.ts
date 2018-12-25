@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GoodService } from '../common/service/good.service';
-import { Cate } from '../common/models/good';
+import { GoodService } from '../../common-services/good.service';
+import { Cate } from '../../common/models/good';
 
 @Component({
   selector: 'app-index',

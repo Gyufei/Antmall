@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GoodService } from '../common/service/good.service';
-
-import { GoodDetail } from '../common/classes/good-detail';
+import { GoodService } from '../../common-services/good.service';
+import { GoodDetail } from '../../common/models/good-detail';
 
 @Component({
   selector: 'app-good-detail',

@@ -1,54 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
-
 import { HttpClientModule } from '@angular/common/http'
-import { AppRouteingModule } from './router/app-routeing.module';
-import { Rest } from './common/rest.service';
 
-import { GoodService } from './common/service/good.service';
-import { UserService } from './common/service/user.service';
-import { AuthGuard } from './common/service/auth-guard.service'
-import { AuthService } from './common/service/auth.service'
-import { CateHover } from './common/directive/cate_hover.directive';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { IndexComponent } from './index/index.component';
-import { GoodDetailComponent } from './good-detail/good-detail.component';
+import { CommonComponentsModule } from './common-components/common-components.module'
+import { UserModule } from './user/user.module'
+import { GoodModule } from './good/good.module'
+import { AppRouteingModule } from './app-routeing.module'
 
-import { HeadComponent } from './common/components/head/head.component';
-import { FootComponent } from './common/components/foot/foot.component';
-import { SearchBarComponent } from './common/components/search-bar/search-bar.component';
-import { MiniSearchBarComponent } from './common/components/mini-search-bar/mini-search-bar.component';
-import { RegisteredComponent } from './registered/registered.component';
+import { CateHover } from './common/directive/cate_hover.directive'
+
+import { AppComponent } from './app.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
-    HeadComponent,
-    FootComponent,
-    SearchBarComponent,
-    MiniSearchBarComponent,
     CateHover,
-    GoodDetailComponent,
-    LoginComponent,
-    RegisteredComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    CommonComponentsModule,
+    UserModule,
+    GoodModule,
     AppRouteingModule
   ],
-  providers: [
-    Rest,
-    GoodService,
-    UserService,
-    AuthService,
-    AuthGuard
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,7 +14,6 @@ export class CateHover{
   @HostListener('mouseenter') 
   hasEnter(){
     this.highlight('white')
-    console.log(this.el);
   }
   @HostListener('mouseleave')
   hasLeave(){

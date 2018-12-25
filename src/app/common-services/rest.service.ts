@@ -5,35 +5,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http'
 
-import { Observable } from 'rxjs/observable'
-import { _throw } from 'rxjs/observable/throw'
+import { Observable, throwError } from 'rxjs'
 import { catchError } from 'rxjs/operators'
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class Rest {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  // 通用的 get 请求方法
   public get(url: string, params: HttpParams = new HttpParams()): Observable<any> {
     console.log(url);
     return this.http.get(url, { params })
-    .pipe( catchError(this.handleError))
+      .pipe(catchError(this.handleError))
   }
 
   public post(url: string, body: Object = {}): Observable<any> {
     return this.http.post(url, JSON.stringify(body))
-    .pipe( catchError(this.handleError))
+      .pipe(catchError(this.handleError))
   }
 
   public put(url: string, body: Object = {}): Observable<any> {
     return this.http.put(url, JSON.stringify(body))
-    .pipe(catchError(this.handleError))
+      .pipe(catchError(this.handleError))
   }
 
   public delete(url): Observable<any> {
     return this.http.delete(url)
-    .pipe(catchError(this.handleError))
+      .pipe(catchError(this.handleError))
   }
 
   // 错误处理
@@ -46,6 +46,6 @@ export class Rest {
       )
     }
 
-    return _throw('something bad happened; please try again later')
+    return throwError('something bad happened; please try again later')
   }
 }
