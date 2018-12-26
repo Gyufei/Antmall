@@ -7,6 +7,7 @@ import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http'
 
 import { Observable, throwError } from 'rxjs'
 import { catchError } from 'rxjs/operators'
+import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,23 +16,26 @@ export class Rest {
 
   constructor(private http: HttpClient) { }
 
-  public get(url: string, params: HttpParams = new HttpParams()): Observable<any> {
-    console.log(url);
+  public get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
+    const url = `${environment.baseUrl}${path}`
     return this.http.get(url, { params })
       .pipe(catchError(this.handleError))
   }
 
-  public post(url: string, body: Object = {}): Observable<any> {
+  public post(path: string, body: Object = {}): Observable<any> {
+    const url = `${environment.baseUrl}${path}`
     return this.http.post(url, JSON.stringify(body))
       .pipe(catchError(this.handleError))
   }
 
-  public put(url: string, body: Object = {}): Observable<any> {
+  public put(path: string, body: Object = {}): Observable<any> {
+    const url = `${environment.baseUrl}${path}`
     return this.http.put(url, JSON.stringify(body))
       .pipe(catchError(this.handleError))
   }
 
-  public delete(url): Observable<any> {
+  public delete(path: string): Observable<any> {
+    const url = `${environment.baseUrl}${path}`
     return this.http.delete(url)
       .pipe(catchError(this.handleError))
   }

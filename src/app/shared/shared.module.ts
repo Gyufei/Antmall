@@ -23,4 +23,4 @@ import { MiniSearchBarComponent } from './mini-search-bar/mini-search-bar.compon
     MiniSearchBarComponent
   ]
 })
-export class CommonComponentsModule { }
+export class SharedModule { }

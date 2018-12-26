@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 
 
-import { CommonComponentsModule } from './common-components/common-components.module'
+import { SharedModule  } from './shared/shared.module'
 import { UserModule } from './user/user.module'
 import { GoodModule } from './good/good.module'
 import { AppRouteingModule } from './app-routeing.module'
@@ -20,7 +20,7 @@ import { AppComponent } from './app.component'
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    CommonComponentsModule,
+    SharedModule,
     UserModule,
     GoodModule,
     AppRouteingModule

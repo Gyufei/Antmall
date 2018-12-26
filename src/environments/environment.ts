@@ -4,5 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'https://easy-mock.com/mock/5a7bf4fe9fafd139ba5809d4/mall'
 };

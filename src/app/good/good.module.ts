@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { GoodRoutingModule } from './good-routing.module'
 
-import { CommonComponentsModule } from '../common-components/common-components.module'
+import { SharedModule } from '../shared/shared.module'
 
 import { IndexComponent } from './index/index.component'
 import { GoodDetailComponent } from './good-detail/good-detail.component'
@@ -19,7 +19,7 @@ import { CateHover } from './index/cate_hover.directive'
   imports: [
     CommonModule,
     GoodRoutingModule,
-    CommonComponentsModule
+    SharedModule
   ]
 })
 export class GoodModule { }

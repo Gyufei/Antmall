@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { AuthService } from './auth.service'
+import { AuthService } from '../auth.service'
 
 import {
   CanActivate,
