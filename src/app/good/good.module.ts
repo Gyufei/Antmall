@@ -7,10 +7,14 @@ import { CommonComponentsModule } from '../common-components/common-components.m
 import { IndexComponent } from './index/index.component'
 import { GoodDetailComponent } from './good-detail/good-detail.component'
 
+import { CateHover } from './index/cate_hover.directive'
+
+
 @NgModule({
   declarations: [
     IndexComponent,
-    GoodDetailComponent
+    GoodDetailComponent,
+    CateHover
   ],
   imports: [
     CommonModule,
