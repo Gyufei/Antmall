@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GoodService } from '../../core/services/good.service';
-import { Cate } from '../../core/model/good';
+import { GoodService } from '@app/core/services/good.service';
+import { Cate } from '@app/core/model/good';
 
 @Component({
   selector: 'app-index',
@@ -15,7 +15,8 @@ export class IndexComponent implements OnInit {
   public sub_cate  // 轮播侧边栏分类的子分类
   public hover_cate_id: number // 轮播侧边栏保持hover效果的分类id
 
-  constructor(private gs: GoodService) {  }
+  constructor(private goodService: GoodService,
+    ) {  }
 
   ngOnInit() {
     this.get_all_cate();
@@ -23,14 +24,14 @@ export class IndexComponent implements OnInit {
 
   // 获取首页所有分类商品
   public get_all_cate() {
-    this.gs.get_index_cate().subscribe((res) => {
+    this.goodService.get_index_cate().subscribe((res) => {
       this.all_cate_good = res;
       this.commend_cate = res.slice(1, 3)
     })
   }
 
   public get_sub_cate(id: number) {
-    this.gs.get_sub_cate(id).subscribe((res) => {
+    this.goodService.get_sub_cate(id).subscribe((res) => {
       this.sub_cate = res;
     })
   }
@@ -40,6 +41,7 @@ export class IndexComponent implements OnInit {
     this.get_sub_cate(id)
     this.hover_cate_id = id;
   }
+
   // 鼠标离开菜单分类
   public cate_leave(id: number): void{
     this.hover_cate_id = null;
@@ -62,11 +64,6 @@ export class IndexComponent implements OnInit {
   public sub_cate_leave(id: number): void{
     this.hover_cate_id = null;
     this.sub_cate = null;
-  }
-
-  // 单个商品的点击事件
-  public good_click(good):void{
-    console.log(good);
   }
 
 }

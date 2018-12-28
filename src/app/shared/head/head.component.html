@@ -4,10 +4,10 @@
         天猫首页
     </a>
     <span>喵，欢迎来天猫</span>
-    <ng-template *ngIf="isLogin">
+    <ng-container *ngIf="!isLogin">
         <a routerLink="/login">请登录</a>
         <a routerLink="/registered">免费注册</a>
-    </ng-template>
+    </ng-container>
 
     <span class="pull-right">
         <a>我的订单</a>

@@ -61,22 +61,6 @@
   <div class="carouselBackgroundDiv"></div>
 </div>
 
+<app-good-row *ngFor="let cate of all_cate_good" [cate]="cate"></app-good-row>
+
 <!-- 首页商品行 -->
-<div class="homepageCategoryProducts" *ngFor="let cate of all_cate_good">
-  <div class="eachHomepageCategoryProducts">
-    <div class="left-mark"></div>
-    <span class="categoryTitle">{{cate.c_name}}</span>
-    <br>
-
-    <!-- 单个商品 -->
-    <div class="productItem" *ngFor="let good of cate.goods" (click)="good_click(good)">
-      <a><img src={{good.img_src}} alt=""></a>
-      <a class="productItemDescLink">
-        <span class="productItemDesc">{{good.g_name}}</span>
-      </a>
-      <span class="productPrice">{{good.price}}</span>
-    </div>
-    <div style="clear: both;"></div>
-
-  </div>
-</div>

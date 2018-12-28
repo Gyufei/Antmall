@@ -7,14 +7,10 @@ import { AuthService } from '../../core/services/auth.service'
   templateUrl: './head.component.html',
   styleUrls: ['./head.component.scss']
 })
-export class HeadComponent implements OnInit {
-  private isLogin = false
+export class HeadComponent{
+  private isLogin: boolean = false
 
   constructor(private auth: AuthService) { 
     this.isLogin = this.auth.isLogin
   }
-
-  ngOnInit() {
-  }
-
 }

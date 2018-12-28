@@ -13,7 +13,7 @@ const goodRoutes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'good',
+    path: 'good/:id',
     component: GoodDetailComponent,
     canActivate: [AuthGuard]
   },

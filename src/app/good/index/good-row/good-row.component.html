@@ -1,0 +1,7 @@
+<div class="good-row__container">
+  <div class="good-row__mark"></div>
+  <span class="good-row__title">{{cate.c_name}}</span>
+  <div layout>
+    <app-good-panel *ngFor="let good of cate.goods" [good]="good"></app-good-panel>
+  </div>
+</div>
