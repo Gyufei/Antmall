@@ -1,0 +1,22 @@
+<div class="carousel slide" id="solidDown" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-slide-to="0" calss="active" data-target="#solidDown"></li>
+    <li data-slide-to="1" data-target="#solidDown"></li>
+    <li data-slide-to="2" data-target="#solidDown"></li>
+    <li data-slide-to="3" data-target="#solidDown"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div 
+      *ngFor="let src of imgArr;let i = index" 
+      [ngClass]="['item', i===0 ? 'active' : '']">
+
+      <img 
+        src="{{ src }}" alt="{{ 'carousel-img' + i}}"
+        class="carousel__image">
+    </div>
+  </div>
+</div>
+
+<div class="carousel-background"></div>
