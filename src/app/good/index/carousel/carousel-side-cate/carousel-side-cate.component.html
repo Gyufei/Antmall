@@ -1,0 +1,22 @@
+
+<!-- 轮播图侧边的分类菜单 -->
+<div class="carousel-side-cate__container">
+  <!-- 分类菜单 -->
+  <div style="position: relative;">
+    <div class="carousel-side-cate__cate">
+      <div class="carousel-side-cate__item" [class.carousel-side-cate__select]="hover_cate_id == cate.c_id" *ngFor="let cate of all_cate_good" (mouseenter)="cate_enter(cate.c_id)" (click)="cate_click(cate.c_id)" (mouseleave)="cate_leave(cate.c_id)">
+        <span class="glyphicon glyphicon-link"></span><a> {{cate.c_name}}</a>
+      </div>
+    </div>
+  </div>
+
+ <!-- 分类菜单子菜单 -->
+  <div style="position: relative;left:0px;top:0px;" *ngIf="sub_cate != undefined" >
+    <div class="carousel-side-cate__sub-item" (mouseenter)="sub_cate_enter(sub_cate.bl_c_id)" (mouseleave)="sub_cate_leave(sub_cate.bl_c_id)" >
+      <div class="row" *ngFor="let cate_list of sub_cate.sub_cate_list">
+        <a *ngFor="let cate of cate_list">{{cate}}</a>
+        <div class="carousel-side-cate__seperator"></div>
+      </div>
+    </div>
+  </div>
+</div>

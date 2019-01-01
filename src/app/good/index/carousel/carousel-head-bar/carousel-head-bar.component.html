@@ -1,0 +1,13 @@
+<div class="carousel-head__container">
+
+  <div class="carousel-head__head">
+    <span class="glyphicon glyphicon-th-list" style="margin-left: 10px"></span>
+    <span style="margin-left: 10px">商品分类</span>
+  </div>
+
+  <div class="carousel-head__command">
+    <span><a href="#nowhere"><img src="../../assets/image/common/chaoshi.png" alt="supermarket"></a></span>
+    <span><a href="#nowhere"><img src="../../assets/image/common/guoji.png" alt="internation"></a></span>
+    <span (click)="cate_click(cate)" *ngFor="let cate of commend_cate"><a>{{ cate }}</a></span>
+  </div>
+</div>

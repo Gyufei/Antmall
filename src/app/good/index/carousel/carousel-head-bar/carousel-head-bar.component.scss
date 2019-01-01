@@ -1,0 +1,38 @@
+@import 'src/assets/scss/base';
+
+.carousel-head__container {
+  background-color: $m_c;
+}
+
+.carousel-head__head {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+  height: 36px;
+
+  background-color: $m_c;
+
+  line-height: 36px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.carousel-head__command {
+  display: inline-block;
+  line-height: 36px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  span {
+    margin: 0px 20px;
+  }
+
+  img {
+    height: 30px;
+  }
+}
